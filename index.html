@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hackerspace.gr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/mapbox.css">
+  <link rel="stylesheet" type="text/css" href="static/css/app.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="prefetch" type="application/l10n" href="static/locales.ini">
+</head>
+<body>
+
+  <div class="container">
+
+    <div id="lang">
+      <span id="lang-selection" data-l10n-id="lang-selection"><span class="fa fa-language"></span> </span>
+      <select onchange="document.webL10n.setLanguage(this.value || this.options[this.selectedIndex].text);">
+        <option selected value="en">en</option>
+        <option value="el">el</option>
+      </select>
+    </div>
+
+    <div class="page-header">
+      <div class="col-md-4">
+        <img alt="logo" src="static/img/hackerspace.svg">
+      </div>
+      <div class="about col-md-8">
+        <p data-l10n-id="header-text"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- column 1 -->
+      <div class="col-md-4">
+        <!-- status -->
+        <section>
+          <h3>Status</h3>
+          <p>
+            <span id="counter">0</span> <span id="openornot">hackers and 7 capacitors in space, means that space is now closed!</span>
+          </p>
+        </section>
+
+        <!-- twitter -->
+        <section class="hidden-xs">
+          <h3>Updates</h3>
+          <p>
+            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/hackerspacegr" data-widget-id="514044315073400833">Tweets by @hackerspacegr</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </p>
+        </section>
+
+        <!-- photos -->
+        <section class="hidden-xs">
+          <h3 data-l10n-id="photos-title"></h3>
+          <p class="flickr-feed">
+            <div id="flickr-mashup" data-hashtag="#hackerspacegr">
+            </div>
+          </p>
+        </section>
+
+        <!-- passports -->
+        <section class="hidden-xs">
+          <p class="passports">
+            <a href="https://www.noisebridge.net/wiki/Passport" target="_blank">
+              <img src="static/img/passport-badge.png" alt="hackerspace passports">
+            </a>
+          </p>
+        </section>
+      </div>
+
+      <!-- column 2 -->
+      <div class="col-md-4">
+        <!-- events -->
+        <section>
+          <h3>Events</h3>
+          <ul class="calendar" id="calendar_current"></ul>
+          <ul class="calendar" id="calendar"></ul>
+          <p class="more">
+            <a target="_blank" href="https://www.hackerspace.gr/wiki/Category:Events">See all events &gt;</a>
+          </p>
+        </section>
+
+        <!-- news -->
+        <section>
+          <h3 data-l10n-id="news-title"></h3>
+          <p id="news"></p>
+        </section>
+
+        <!-- donate -->
+        <section>
+          <h3 data-l10n-id="donate-title"></h3>
+          <p data-l10n-id="donate-text"></p>
+        </section>
+
+        <!-- membership -->
+        <section>
+          <h3 data-l10n-id="membership-title"></h3>
+          <p data-l10n-id="membership-text"></p>
+        </section>
+      </div>
+
+      <!-- column 3 -->
+      <div class="col-md-4">
+        <!-- location -->
+        <section>
+          <h3 data-l10n-id="location-title"></h3>
+            <p data-l10n-id="location-text"></p>
+          <p id="map">
+          </p>
+        </section>
+
+        <!-- contact -->
+        <section>
+          <h3 data-l10n-id="contact-title"></h3>
+          <p>
+            <span class="fa fa-phone"></span> <a href="tel:302130210437">+30 213 0210 437</a><br>
+            <span class="fa fa-envelope"></span> <a href="https://lists.hackerspace.gr/listinfo/discuss" target="_blank">mailing list</a><br>
+            <span class="fa fa-fw fa-group"></span> <a href="http://webchat.freenode.net/?channels=#hsgr" target="_blank">irc</a><br>
+          </p>
+        </section>
+
+        <!-- resources -->
+        <section>
+          <h3>Resources</h3>
+          <p>
+            <span class="fa fa-pencil"></span> <a href="https://www.hackerspace.gr/wiki/Hackerspace.gr" target="_blank">wiki</a>
+            <hr>
+            <span class="fa fa-twitter"></span> <a href="https://twitter.com/hackerspacegr/" target="_blank">twitter</a><br>
+            <span class="fa fa-facebook"></span> <a href="https://www.facebook.com/hackerspacegr" target="_blank">facebook</a><br>
+            <span class="fa fa-google-plus"></span> <a href="https://plus.google.com/109386037165495650427/" target="_blank">g+</a><br>
+            <span class="fa fa-github"></span> <a href="https://github.com/hsgr" target="_blank">github</a>
+          </p>
+        </section>
+      </div>
+
+    </div>
+
+    <div class="panel-footer">
+      <div class="col-md-12">
+          <span class="fa fa-cc"></span> <span data-l10n-id="footer-cc">Content available under <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike</a> unless otherwise noted.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modals -->
+
+  <!-- People Modal -->
+  <div class="modal fade" id="People" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Members</h4>
+        </div>
+        <div class="modal-body members-body">
+          <table class="table table-condensed">
+            <thead><tr><td>#</td><td>Name</td></tr></thead>
+            <tr class="active"><td>01.</td><td>Ευάγγελος Μπαλάσκας</td></tr>
+            <tr class="active"><td>02.</td><td>Πιέρρος Παπαδέας</td></tr>
+            <tr class="active"><td>03.</td><td>Νίκος Ρούσσος</td></tr>
+            <tr class="active"><td>04.</td><td>Λευτέρης Κοσμάς</td></tr>
+            <tr class="active"><td>05.</td><td>Γιώργος</td></tr>
+            <tr class="active"><td>06.</td><td>Γιώργος Καργιωτάκης</td></tr>
+            <tr class="active"><td>07.</td><td>Βασίλης Τσιλιγιάννης</td></tr>
+            <tr class="active"><td>08.</td><td>Στέφανος Κορνήλιος Μίτσης Ποιητίδης</td></tr>
+            <tr class="active"><td>09.</td><td>Δημήτρης Τομαράς</td></tr>
+            <tr class="active"><td>10.</td><td>Μαλίνα Τζ</td></tr>
+            <tr class="active"><td>11.</td><td>Γιάννης</td></tr>
+            <tr class="active"><td>12.</td><td>Αλέξανδρος Χρονόπουλος</td></tr>
+            <tr class="active"><td>13.</td><td>Σοφοκλής Γκούμας</td></tr>
+            <tr class="active"><td>14.</td><td>Τάσος</td></tr>
+            <tr class="active"><td>15.</td><td>Γιάννης Γιαννέλος</td></tr>
+            <tr class="active"><td>16.</td><td>Μάνθος Παπαματθαίου</td></tr>
+            <tr class="active"><td>17.</td><td>Κωνσταντίνα Παπαδέα</td></tr>
+            <tr class="active"><td>18.</td><td>Λενιώ Λύτρα</td></tr>
+            <tr class="active"><td>19.</td><td>Αγησίλαος Ζησιμάτος</td></tr>
+            <tr><td>20.</td><td>Γιαννης Νικ.</td></tr>
+            <tr><td>21.</td><td>gnavro</td></tr>
+            <tr class="active"><td>22.</td><td>Ευάγγελος Διαμάντης</td></tr>
+            <tr class="active"><td>23.</td><td>Δημήτρης Λιάνος</td></tr>
+            <tr class="active"><td>24.</td><td>Δωροθέα</td></tr>
+            <tr class="active"><td>25.</td><td>Γιάννης Μπελιάς</td></tr>
+          </table>
+          <small data-l10n-id="people-footer"></small>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Supporters Modal -->
+  <div class="modal fade" id="Supporters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Supporters</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  2015
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead><tr><td>Name</td><td>Support</td></tr></thead>
+                  <tr><td><a href="http://www.lulzbot.com/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/LulzBot.png"></a></td><td>3D Printer</td></tr>
+                  <tr><td><a href="http://www.mozilla.org/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mozilla-wordmark.png"></a></td><td>Internet</td></tr>
+                  <tr><td><a href="http://www.tophost.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Tophost.png"></a></td><td>Virtual Private Server</td></tr>
+                  <tr><td><a href="http://www.mastoremata.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mastoremata.png"></a></td><td>Magazine Subscription</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  2014
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead><tr><td>Name</td><td>Support</td></tr></thead>
+                  <tr><td><a href="http://www.mozilla.org/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mozilla-wordmark.png"></a></td><td>Internet</td></tr>
+                  <tr><td><a href="http://www.tophost.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Tophost.png"></a></td><td>Virtual Private Server</td></tr>
+                  <tr><td><a href="http://www.awmn.net/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Awmn.png"></a></td><td>Financial Contribution</td></tr>
+                  <tr><td><a href="http://www.mastoremata.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mastoremata.png"></a></td><td>Magazine Subscription</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  2013
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead><tr><td>Name</td><td>Support</td></tr></thead>
+                  <tr><td><a href="http://www.lulzbot.com/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/LulzBot.png"></a></td><td>3D Printer</td></tr>
+                  <tr><td><a href="http://www.tophost.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Tophost.png"></a></td><td>Virtual Private Server</td></tr>
+                  <tr><td><a href="http://www.robotstore.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Robotstore.png"></a></td><td>FPGA</td></tr>
+                  <tr><td><a href="http://www.linuxinside.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/LinuxInside.png"></a></td><td>Magazine Subscription</td></tr>
+                  <tr><td><a href="http://www.mastoremata.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mastoremata.png"></a></td><td>Magazine Subscription</td></tr>
+                  <tr><td><a href="http://deltahacker.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/DeltaHacker.jpg"></a></td><td>Magazine Subscription</td></tr>
+                </table>
+              </div>
+            </div>
+          </div><div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                  2012
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead><tr><td>Name</td><td>Support</td></tr></thead>
+                  <tr><td><a href="http://www.tophost.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Tophost.png"></a></td><td>Virtual Private Server</td></tr>
+                  <tr><td><a href="http://www.linuxinside.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/LinuxInside.png"></a></td><td>Magazine Subscription</td></tr>
+                  <tr><td><a href="http://www.mastoremata.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Mastoremata.png"></a></td><td>Magazine Subscription</td></tr>
+                  <tr><td><a href="http://deltahacker.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/DeltaHacker.jpg"></a></td><td>Magazine Subscription</td></tr>
+                </table>
+              </div>
+            </div>
+          </div><div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                  2011
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="panel-body">
+                <table class="table table-condensed">
+                  <thead><tr><td>Name</td><td>Support</td></tr></thead>
+                  <tr><td><a href="http://www.tophost.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Tophost.png"></a></td><td>Virtual Private Server</td></tr>
+                  <tr><td><a href="http://www.eellak.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Eellak.png"></a></td><td>Projection System</td></tr>
+                  <tr><td><a href="http://www.hellug.gr/"><img class="supporter-img" src="https://www.hackerspace.gr/wiki/images/Hellug.png"></a></td><td>Equipment</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Membership Modal -->
+  <div class="modal fade" id="Membership" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Join Hackerspace.gr</h4>
+        </div>
+        <div class="modal-body membership-body">
+          <iframe src="https://hackerspace.gr/membership.php" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Vision Modal -->
+  <div class="modal fade" id="Vision" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Vision</h4>
+        </div>
+        <div class="modal-body" data-l10n-id="vision-text">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 Event modals -->
+  <div class="modal fade" id="EventModal-c0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c0"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c0"></span></p>
+          <p class="EventDescription" id="EventDescription-c0"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c0">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="EventModal-c1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c1"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c1"></span></p>
+          <p class="EventDescription" id="EventDescription-c1"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c1">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="EventModal-c2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c2"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c2"></span></p>
+          <p class="EventDescription" id="EventDescription-c2"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c2">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="EventModal-c3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c3"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c3"></span></p>
+          <p class="EventDescription" id="EventDescription-c3"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c3">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="EventModal-c4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c4"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c4"></span></p>
+          <p class="EventDescription" id="EventDescription-c4"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c4">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="EventModal-c5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="EventLabel-c5"></h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="fa fa-calendar"></span> <span class="EventDate" id="EventDate-c5"></span></p>
+          <p class="EventDescription" id="EventDescription-c5"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a type="button" class="btn btn-primary btn" href="#" target="_blank" id="EventEdit-c5">more &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/js/l10n.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+  <script src="static/js/mapbox.js"></script>
+  <script src="static/js/moment.min.js"></script>
+  <script src="static/js/jquery.zflickrfeed.js"></script>
+  <script src="static/js/ical_parser.js"></script>
+  <script src="static/js/FeedEk.js"></script>
+  <script src="static/js/app.js"></script>
+
+</body>
+</html>
