@@ -1,12 +1,12 @@
 {
-  "name": "fossaegean",
-  "description": "fossaegean web app",
+  "name": "hsgr",
+  "description": "Hackerspace.gr web app",
   "icons": {
     "128": "/static/img/icon-128.png"
   },
   "developer": {
-    "name": "fossaegean",
-    "url": "https://github.com/fossaegean"
+    "name": "Hackerspace.gr",
+    "url": "https://github.com/hsgr"
   },
   "default_locale": "en"
 }
