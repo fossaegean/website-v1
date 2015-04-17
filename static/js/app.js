@@ -79,7 +79,7 @@ function displayEvents(events, events_current, limit) {
 // get upcoming events
 var a, b;
 function get_events() {
-  var ical_url = 'https://www.hackerspace.gr/wiki/Special:Ask/-5B-5BCategory:Events-7C-7CMeetings-5D-5D/-3FTitle%3Dsummary/-3FStart-20date%3Dstart/-3FEnd-20date%3Dend/-3FLocation%3Dlocation/-3Ftagline%3Ddescription/format%3D-20icalendar/limit%3D-2050/sort%3D-20Start-20date/order%3Ddesc/searchlabel%3D-20iCal/title%3D-20hsgr/offset%3D0';
+  var ical_url = 'https://foss.aegean.gr/wiki/index.php/Special:Ask/-5B-5BCategory:Events-7C-7CMeetings-5D-5D/-3FTitle%3Dsummary/-3FStart-20date%3Dstart/-3FEnd-20date%3Dend/-3FLocation%3Dlocation/-3Ftagline%3Ddescription/format%3D-20icalendar/limit%3D-2050/sort%3D-20Start-20date/order%3Ddesc/searchlabel%3D-20iCal/title%3D-20hsgr/offset%3D0';
   new ical_parser(ical_url, function(cal) {
     a = cal.getFutureEvents();
     b = cal.getCurrentEvents();
