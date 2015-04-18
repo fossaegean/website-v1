@@ -50,6 +50,13 @@ fonts
 
 }
 
+/*
+fa-icons fix
+*/
+
+.fa-facebook {
+    padding: 0 2px;
+}
 
 /*
 rest
