@@ -1,6 +1,6 @@
-# hackerspace.gr
+# fossaegean.gr
 
-Hackerspace.gr web app
+fossaegean.gr web app
 
 
 ## license
