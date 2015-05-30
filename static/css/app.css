@@ -106,6 +106,14 @@ a {
     color: #2e5ce6;
 }
 
+a:hover {
+    color: #000000;
+}
+
+a:active {
+    color: #000000;
+}
+
 #lang {
     float:right;
     font-weight: 300;
