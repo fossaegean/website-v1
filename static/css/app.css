@@ -103,6 +103,10 @@ section > h3 {
 }
 
 a {
+    color: #000000;
+}
+
+a:link {
     color: #2e5ce6;
 }
 
@@ -112,6 +116,10 @@ a:hover {
 
 a:active {
     color: #000000;
+}
+
+a:visited {
+    color: #2e5ce6;
 }
 
 #lang {
